@@ -1,6 +1,14 @@
+import "babel-polyfill";
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import style from "./index.css";
+import { render } from "react-dom";
+import { Route, BrowserRouter } from "react-router-dom";
+import App from "./components/App";
+import "./styles/styles.css";
+import "./styles/bootstrap.min.css";
 
-ReactDOM.render(<App />, document.getElementById("app"));
+render(
+  <BrowserRouter>
+    <Route component={App} />
+  </BrowserRouter>,
+  document.getElementById("app")
+);
